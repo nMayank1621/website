@@ -1,0 +1,257 @@
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("back3.jpg") no-repeat center center fixed;
+  background-size: cover;
+  opacity: 0.9; 
+  z-index: -1;
+}
+.body-1{
+  background-color: whitesmoke;
+}
+.header{
+    width: 1338px;
+    padding: 4px;
+    margin-top: -5px;
+    padding-left: 4px;
+    padding-right: 4px;
+    margin-left: -9px;
+    background-repeat: no-repeat center-fixed;
+
+}
+.bar img{
+    width: 86px;
+    height: 84px;
+    border-radius: 109px;
+    display: flex;
+    margin-left: 480px;
+    cursor: pointer;
+    margin-top: 17;
+}
+.bar h2{
+    text-align: center;
+    justify-content: center;
+    margin-top: -94px;
+    font-family: cursive;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 70px;
+    margin-left: 6pc;
+}
+.call{
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    margin-top: -134px;
+    cursor: pointer;
+    margin-left: 154px;
+}
+.helpline{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+h4{
+    display: flex;
+    font-family: cursive;
+    font-size: 11px;
+    margin-top: -36px;
+    margin-left: 205px;
+    font-weight: bold;
+    cursor: pointer;
+}
+h5{
+    display: flex;
+    font-family: cursive;
+    font-size: 13px;
+    margin-top: -11px;
+    margin-left: 201px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.search input{
+    text-align: right;
+    display: flex;
+    background-position: right;
+    margin-left: 1149px;
+    margin-top: -55px;
+    border-radius: 20px;
+}
+/* .social-list img{
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    display: flex;
+    margin-left: 113px;
+    margin-top: -10px;
+    visibility:visible;
+    cursor: pointer;
+}
+.linkedin img{
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    display: flex;
+    margin-left: 110px;
+    cursor: pointer;
+    visibility: inherit;
+    margin-top: -47px;
+    visibility:visible;
+    cursor: pointer;
+}
+.insta img{
+     width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    display: flex;
+    margin-left: 60px;
+    cursor: pointer;
+    visibility: inherit;
+    margin-top: -33px;
+    visibility:visible;
+    cursor: pointer;
+} */
+
+.social-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+    margin-left: -950px;
+}
+
+.social-container img {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.social-container img:hover {
+    transform: scale(1.1);
+}
+
+.navbar{
+  border-radius: 1px;
+  width: 777px;
+  margin-top: -55px;
+  margin-left: 294px;
+  cursor: pointer;
+  }
+.navbar ul{
+margin: 18px;
+padding: 2px;
+overflow: auto;
+
+}
+.navbar li{
+float: inline-start;
+list-style: none;
+margin: 10px;
+}
+.navbar li a{
+padding: 9px 9px;
+color: rgb(0, 0, 0);
+text-decoration: none;
+text-align: center;
+justify-content: center;
+font-family: cursive;
+}
+.navbar li a:hover{
+color: rgb(255, 208, 0);
+}
+.book-button button {
+  background-color: #8e44ad;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 0 30px rebeccapurple;
+  margin-left: 1150px;
+  width: 140px;
+}
+
+.book-button button:hover {
+  background-color: #0004ff;
+}
+.container h1{
+    text-align: center;
+    justify-content: center;
+    margin-top: 53px;
+    font-size: 75px;
+    font-weight: var(--fw-800);
+    font-family: var(--ff-montserrat);
+    text-transform: uppercase;
+    color: rgb(0, 0, 0);
+}
+ h2{
+    text-align: center;
+    justify-content: center;
+    font-family: cursive;
+    font-size: 20px;
+    margin-top: -70px;
+}
+.button-container {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.learn-more {
+  background-color: #007BFF;
+  color: white;
+}
+
+.book-now {
+  background-color: #28a745;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+.container2{
+    padding: 20px;
+    width: 1309px;
+    margin-left: -9px;
+    margin-top: 20px;
+    background-color: rgb(122, 124, 255);
+}
+.form, .form2, .form3, .form4{
+    padding: 5px 2px;
+    display: inline-block;    
+    margin: 10px;
+    text-align: center;
+    justify-content: center;
+    width: 295px;
+    color: white;
+    font-weight: bold;
+    font-family: cursive;
+    font-size: 22px;
+}
+.container2 input{
+    border-radius: 51px;
+    box-sizing: border-box;
+    width: 222px;
+    height: 52px;
+}
