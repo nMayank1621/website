@@ -10,6 +10,20 @@ body::before {
   opacity: 0.9; 
   z-index: -1;
 }
+/* Default (desktop) styles */
+body {
+  font-size: 16px;
+  padding: 40px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    padding: 20px;
+  }
+}
+
 .header{
     width: 1338px;
     padding: 4px;
