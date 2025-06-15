@@ -5,13 +5,10 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("back3.jpg") no-repeat center center fixed;
+  background: url("back3.jpg") fixed;
   background-size: cover;
   opacity: 0.9; 
   z-index: -1;
-}
-.body-1{
-  background-color: whitesmoke;
 }
 .header{
     width: 1338px;
@@ -82,41 +79,6 @@ h5{
     margin-top: -55px;
     border-radius: 20px;
 }
-/* .social-list img{
-    width: 32px;
-    height: 32px;
-    border-radius: 10px;
-    display: flex;
-    margin-left: 113px;
-    margin-top: -10px;
-    visibility:visible;
-    cursor: pointer;
-}
-.linkedin img{
-    width: 32px;
-    height: 32px;
-    border-radius: 10px;
-    display: flex;
-    margin-left: 110px;
-    cursor: pointer;
-    visibility: inherit;
-    margin-top: -47px;
-    visibility:visible;
-    cursor: pointer;
-}
-.insta img{
-     width: 32px;
-    height: 32px;
-    border-radius: 10px;
-    display: flex;
-    margin-left: 60px;
-    cursor: pointer;
-    visibility: inherit;
-    margin-top: -33px;
-    visibility:visible;
-    cursor: pointer;
-} */
-
 .social-container {
     display: flex;
     justify-content: center;
@@ -179,6 +141,7 @@ color: rgb(255, 208, 0);
   box-shadow: 0 0 30px rebeccapurple;
   margin-left: 1150px;
   width: 140px;
+  margin-top: 18px;
 }
 
 .book-button button:hover {
@@ -187,7 +150,7 @@ color: rgb(255, 208, 0);
 .container h1{
     text-align: center;
     justify-content: center;
-    margin-top: 53px;
+    margin-top: 105px;
     font-size: 75px;
     font-weight: var(--fw-800);
     font-family: var(--ff-montserrat);
@@ -234,7 +197,8 @@ button:hover {
     padding: 20px;
     width: 1309px;
     margin-left: -9px;
-    margin-top: 20px;
+    margin-top: 213px;
+    height: 223px;
     background-color: rgb(122, 124, 255);
 }
 .form, .form2, .form3, .form4{
@@ -254,4 +218,180 @@ button:hover {
     box-sizing: border-box;
     width: 222px;
     height: 52px;
+}
+.book-button{
+  margin-top: -74px;
+}
+.body-1{
+  background-color: whitesmoke;
+  margin-top: -22px;
+  width: 1348px;
+  margin-left: -7px;
+  height: 1338px;
+}
+.red{
+  text-align: center;
+  display: flex;
+  margin-top: 1px;
+  margin-left: -1px;
+}
+.red h4{
+  display: block;
+  font-family: cursive;
+  font-size: 11px;
+  margin-top: -244px;
+  margin-left: 591px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 25px;
+}
+.blue h2{
+  display: block;
+  text-align: center;
+  margin-top: -191px;
+  font-size: 60px;
+  font-weight: bolder;
+  margin-bottom: 15px;
+}
+.container3{
+  padding-inline: 15px;
+}
+.section{
+  text-align: center;
+  font-size: 25px;
+  margin-top: -1297px;
+  color: #6063ff;
+}
+.h2-section{
+  text-align: center;
+  font-size: 40px;
+  margin-top: -12px;
+  font-weight: bolder;
+  color: rgb(44, 110, 69);
+}
+.h6-section{
+  text-align: center;
+  font-size: 15px;
+  width: 364px;
+  margin-left: 454px;
+  margin-top: -33px;
+}
+.container{
+  margin: 100px 0 0 200px;
+  width: 70%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  gap: 178px;
+}
+.container img{
+  width: 19%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 25px;
+  border: 2px solid rgb(139, 139, 139);
+  transition:ease-in-out 0.6s;
+  margin-top: -56px;
+}
+.container img:hover{
+  width: 25%;
+}
+.content{
+  border: 2px solid rgb(236, 236, 236);
+  width: 216px;
+  height: 121px;
+  margin-left: 154px;
+  border-radius: 39px;
+  padding: 33px;
+  background-color: rgb(240, 240, 240);
+}
+.content span{
+  font-size: 30px;
+  padding: 1px;
+  font-family: cursive;
+  color: rgb(85, 85, 85);
+
+}
+span-2{
+  font-family: cursive;
+  color: black;
+}
+.content:hover{
+  background-color: rgb(224, 138, 250);
+  transition:ease-in-out 0.6s;
+}
+.content2{
+  border: 2px solid rgb(236, 236, 236);
+  width: 239px;
+  height: 121px;
+  margin-left: 510px;
+  border-radius: 39px;
+  padding: 33px;
+  background-color: rgb(240, 240, 240);
+  margin-top: -205px;
+}
+.content2 span{
+  font-size: 30px;
+  padding: 1px;
+  font-family: cursive;
+  color: rgb(85, 85, 85);
+
+}
+span-2{
+  font-family: cursive;
+  color: black;
+}
+.content2:hover{
+  background-color: rgb(224, 138, 250);
+  transition:ease-in-out 0.6s;
+}
+.content3{
+  border: 2px solid rgb(236, 236, 236);
+  width: 232px;
+  height: 121px;
+  margin-left: 878px;
+  border-radius: 39px;
+  padding: 33px;
+  background-color: rgb(240, 240, 240);
+  margin-top: -205px;
+}
+.content3 span{
+  font-size: 30px;
+  padding: 1px;
+  font-family: cursive;
+  color: rgb(85, 85, 85);
+
+}
+span-2{
+  font-family: cursive;
+  color: black;
+}
+.content3:hover{
+  background-color: rgb(224, 138, 250);
+  transition:ease-in-out 0.6s;
+}
+.more-button button {
+  background-color: #ff7ad39f;
+  color: rgb(0, 0, 0);
+  padding: 12px 25px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  box-shadow: 0 0 30px rebeccapurple;
+  margin-left: 594px;
+  width: 155px;
+  margin-top: 18px;
+}
+
+.more-button button:hover {
+  background-color: #9395e9;
+}
+.blue{
+  text-align: center;
+  margin: 120px;
+  font-family: cursive;
+  font-size: 20px;
+  color: #007BFF;
 }
