@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LogIn</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div class="login-container">
+    <h1>Log In</h1>
+    <form class="login-form" onsubmit="login(); return false;">
+
+        <h3>User-Id *</h3>
+        <input type="text" id="username" placeholder="Enter your User-id" required>
+        <h4>Password *</h4>
+        <input type="password" id="password"  placeholder="Enter your password" required>
+        <a href="#">Forget Password*?</a>
+        <p id="error-message" style="color: red;"></p>
+
+
+        <button type="submit">Log In</button>
+
+
+        <div class="through-links">
+            <h5>Or</h5>
+            <div class="links">
+            <a href="https://www.facebook.com/" target="_blank">
+            <img src="facebook.png" alt="Facebook">
+        </a>
+        <a href="https://www.linkedin.com/in/mayank-joshi-110623364/" target="_blank">
+            <img src="linkdin.webp" alt="LinkedIn">
+        </a>
+        <a href="https://www.instagram.com/" target="_blank">
+            <img src="insta3.avif" alt="Instagram">
+        </a>
+        <a href="https://github.com/nMayank1621">
+            <img src="github.png" alt="Github">
+        </a>
+        </div>
+        </div>
+    </form>
+  </div>
+    
+  <script>
+    function login() {
+      const user = document.getElementById('username').value;
+      const pass = document.getElementById('password').value;
+
+      const validUser = "admin";
+      const validPass = "1234";
+
+      if (user === validUser && pass === validPass) {
+        window.location.href = "your.html";
+          
+      } else {
+        document.getElementById("error-message").innerText = "Invalid username or password!";
+      }
+
+    }
+    
+  </script>
+</body>
+</html>
