@@ -2,53 +2,180 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact Us</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Get In Touch</title>
   <link rel="stylesheet" href="contact.css">
 </head>
 <body>
   <div class="contact-container">
     <h1>CONTACT US</h1>
-    <form class="contact-form" onsubmit="return validateContactForm(event)">
-        <input type="text" id="username" placeholder="Your Name" required>
-        <input type="email" id="useremail" placeholder="Your Email" required>
-        <input type="tel" id="usernumber" placeholder="Phone Number" required>
-        <input type="text" id="usersubject" placeholder="Subject" required>
-        <textarea id="usermssg" placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit">Send Message</button>
-        <div id="error-message" style="color:red; margin-top:10px;"></div>
+    
+    <form class="contact-form" id="contactForm">
+      <div class="form-group">
+        <label for="username">Full Name</label>
+        <input 
+          type="text" 
+          id="username" 
+          name="username"
+          placeholder="Enter your full name" 
+          required
+          autocomplete="name"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="useremail">Email Address</label>
+        <input 
+          type="email" 
+          id="useremail" 
+          name="useremail"
+          placeholder="Enter your email address" 
+          required
+          autocomplete="email"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="usernumber">Phone Number</label>
+        <input 
+          type="tel" 
+          id="usernumber" 
+          name="usernumber"
+          placeholder="Enter your phone number" 
+          required
+          autocomplete="tel"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="usersubject">Subject</label>
+        <input 
+          type="text" 
+          id="usersubject" 
+          name="usersubject"
+          placeholder="Enter the subject" 
+          required
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="usermssg">Message</label>
+        <textarea 
+          id="usermssg" 
+          name="usermssg"
+          placeholder="Enter your message here..." 
+          rows="5" 
+          required
+        ></textarea>
+      </div>
+
+      <button type="submit" id="submitBtn">
+        <span class="btn-text">Send Message</span>
+      </button>
+
+      <div id="error-message" class="error-message"></div>
+      <div id="success-message" class="success-message"></div>
     </form>
   </div>
 
   <script>
-    function validateContactForm(event) {
-      event.preventDefault(); 
 
-      const username = document.getElementById('username').value;
-      const email = document.getElementById('useremail').value;
-      const number = document.getElementById('usernumber').value;
-      const subject = document.getElementById('usersubject').value;
-      const message = document.getElementById('usermssg').value;
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault();
 
-      const validUser = "Mayank";
-      const validEmail = "mayankjoshi6545@gmail.com";
-      const validNumber = "9717880082";
-      const validSubject = "Hello sir";
-      const validMessage = "heyy";
+      const submitBtn = document.getElementById('submitBtn');
+      const errorMessage = document.getElementById('error-message');
+      const successMessage = document.getElementById('success-message');
+      const btnText = submitBtn.querySelector('.btn-text');
 
-      if (
-        username === validUser &&
-        email === validEmail &&
-        number === validNumber &&
-        subject === validSubject &&
-        message === validMessage
-      ) {
-        window.location.href = "index.html";
-      } else {
-        document.getElementById("error-message").innerText =
-          "Invalid contact details. Please check your input.";
-      }
+      errorMessage.classList.remove('show');
+      successMessage.classList.remove('show');
+
+      submitBtn.classList.add('loading');
+      btnText.textContent = 'Sending...';
+
+      const formData = {
+        username: document.getElementById('username').value.trim(),
+        email: document.getElementById('useremail').value.trim(),
+        number: document.getElementById('usernumber').value.trim(),
+        subject: document.getElementById('usersubject').value.trim(),
+        message: document.getElementById('usermssg').value.trim()
+      };
+
+      setTimeout(() => {
+        submitBtn.classList.remove('loading');
+        btnText.textContent = 'Send Message';
+      
+        if (!validateEmail(formData.email)) {
+          showError('Please enter a valid email address.');
+          return;
+        }
+        
+        if (!validatePhone(formData.number)) {
+          showError('Please enter a valid phone number.');
+          return;
+        }
+        
+        if (formData.message.length < 10) {
+          showError('Please enter a message with at least 10 characters.');
+          return;
+        }
+        const validCredentials = {
+          username: "Mayank",
+          email: "mayankjoshi6545@gmail.com",
+          number: "9717880082",
+          subject: "Hello sir",
+          message: "heyy"
+        };
+        
+        if (Object.keys(validCredentials).every(key => 
+          formData[key].toLowerCase() === validCredentials[key].toLowerCase()
+        )) {
+          showSuccess('Message sent successfully! Redirecting...');
+          setTimeout(() => {
+            window.location.href = "index.html";
+          }, 2000);
+        } else {
+          showSuccess('Thank you for your message! We will get back to you soon.');
+
+          document.getElementById('contactForm').reset();
+        }
+      }, 1500);
+    });
+
+    function validateEmail(email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
     }
+    
+    function validatePhone(phone) {
+      const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
+      return phoneRegex.test(phone.replace(/[\s\-\(\)]/g, ''));
+    }
+    
+    function showError(message) {
+      const errorElement = document.getElementById('error-message');
+      errorElement.textContent = message;
+      errorElement.classList.add('show');
+    }
+    
+    function showSuccess(message) {
+      const successElement = document.getElementById('success-message');
+      successElement.textContent = message;
+      successElement.classList.add('show');
+    }
+
+    document.getElementById('useremail').addEventListener('blur', function() {
+      if (this.value && !validateEmail(this.value)) {
+        this.style.borderColor = '#e53e3e';
+      }
+    });
+    
+    document.getElementById('usernumber').addEventListener('blur', function() {
+      if (this.value && !validatePhone(this.value)) {
+        this.style.borderColor = '#e53e3e';
+      }
+    });
   </script>
 </body>
 </html>
