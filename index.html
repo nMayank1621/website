@@ -1,13 +1,28 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tourista Travels</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="letsgo.css">
 </head>
 <body>
+    <!-- 3D Cube Animation -->
+    <div class="cube-container">
+        <div class="cube">
+            <div class="cube-face front">TRAVEL</div>
+            <div class="cube-face back">EXPLORE</div>
+            <div class="cube-face right">DISCOVER</div>
+            <div class="cube-face left">ADVENTURE</div>
+            <div class="cube-face top">JOURNEY</div>
+            <div class="cube-face bottom">TOURISTA</div>
+        </div>
+    </div>
+    
     <div class="header">    
         <div class="bar">
             <h2>TOURISTA</h2>
@@ -15,7 +30,10 @@
     
 
     <div class="navbar">
-        <nav>
+        <button class="menu-toggle" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav id="mobile-nav">
             <ul>
                 <li><a href="#home">HOME</a></li>
                 <li><a href="#popular-destination">DESTINATION</a></li>
@@ -48,23 +66,18 @@
 
             <div class="slideshow-container">
                 <div class="mySlides fade active">
-                    <!-- <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&h=400&fit=crop" alt="Beautiful landscape"> -->
                      <img src="l.jpg" style="width:100%">
                 </div>
                 <div class="mySlides fade">
-                    <!-- <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=800&h=400&fit=crop" alt="Mountain view"> -->
                      <img src="l3.jpg" style="width:100%">
                 </div>
                 <div class="mySlides fade">
-                    <!-- <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&h=400&fit=crop" alt="Beach paradise"> -->
                      <img src="placerep.jpg" style="width:100%">
                 </div>
                 <div class="mySlides fade">
-                    <!-- <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&h=400&fit=crop" alt="Forest trail"> -->
                      <img src="place rep.jpg" style="width:100%">
                 </div>
                 <div class="mySlides fade">
-                    <!-- <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=800&h=400&fit=crop" alt="Sunset view"> -->
                      <img src="place5.webp" style="width:100%">
                 </div>
                       <div class="mySlides fade">
@@ -102,11 +115,8 @@
                 <h4>Explore our curated travel packages for unforgettable experiences. Choose your dream getaway and let us bring it to life. Start your journey today.</h4>
             </div>
         </div>
-
-        <!-- Bali Package -->
         <div class="package-card">
             <div class="package-image">
-                <!-- <img src="https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?w=400&h=300&fit=crop" alt="Bali"> -->
                  <img src="bali.png" alt="bali" >
             </div>
             <div class="package-content">
@@ -130,12 +140,8 @@
         <a href="book-now.html" target="_blank">BOOK NOW!</a></button> 
     </div>
             </div>
-        
-
-        <!-- Dubai Package -->
         <div class="package-card">
             <div class="package-image">
-                <!-- <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=400&h=300&fit=crop" alt="Dubai"> -->
                  <img src="dubai1.png" alt="dubai">
             </div>
             <div class="package-content">
@@ -160,11 +166,8 @@
         <a href="book-now2.html" target="_blank">BOOK NOW!</a></button>
             </div>
         </div>
-
-        <!-- Japan Package -->
         <div class="package-card">
             <div class="package-image">
-                <!-- <img src="https://images.unsplash.com/photo-1490806843957-31f4c9a91c65?w=400&h=300&fit=crop" alt="Japan"> -->
                  <img src="japan2.png" alt="japan" >
             </div>
             <div class="package-content">
@@ -280,6 +283,7 @@
     </section>
 
     <script>
+        // Slideshow functionality
         let slideIndex = 0;
         showSlides();
 
@@ -331,6 +335,29 @@
                 dots[slideIndex - 1].classList.add("active");
             }
         }
+        
+        // Mobile navigation menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileNav = document.getElementById('mobile-nav');
+            
+            if (menuToggle && mobileNav) {
+                menuToggle.addEventListener('click', function() {
+                    mobileNav.classList.toggle('active');
+                    menuToggle.classList.toggle('active');
+                });
+                
+                // Close menu when clicking on a link
+                const navLinks = mobileNav.querySelectorAll('a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        mobileNav.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                    });
+                });
+            }
+        });
     </script>
 </body>
+</html>
 </html>
