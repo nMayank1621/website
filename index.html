@@ -43,8 +43,8 @@
         </nav>
 
         <div class="button-container2">
-    <a href="login.html" target="_blank"><button class="login-btn">Login</button></a>
-    <a href="sign.html" target="_blank"><button class="login-btn">Sign-In</button></a>
+    <a href="login.html"><button class="login-btn">Login</button></a>
+    <a href="sign.html"><button class="login-btn">Sign-In</button></a>
         </div>
     </div> 
 
@@ -137,7 +137,7 @@
                 <h2>$870</h2>
                 <h6>/per person</h6>
                 <button>
-        <a href="book-now.html" target="_blank">BOOK NOW!</a></button> 
+        <a href="book-now.html">BOOK NOW!</a></button> 
     </div>
             </div>
         <div class="package-card">
@@ -163,7 +163,7 @@
                 <h2>$900</h2>
                 <h6>/per person</h6>
                 <button>
-        <a href="book-now2.html" target="_blank">BOOK NOW!</a></button>
+        <a href="book-now2.html">BOOK NOW!</a></button>
             </div>
         </div>
         <div class="package-card">
@@ -189,7 +189,7 @@
                 <h2>$720</h2>
                 <h6>/per person</h6>
                 <button>
-        <a href="book-now3.html" target="_blank">BOOK NOW!</a></button>
+        <a href="book-now3.html">BOOK NOW!</a></button>
             </div>
         </div>
     </div>
@@ -240,7 +240,7 @@
             <h1>Ready For Unforgettable<br>Travel? Remember Us!</h1>
         </div>
         <div class="poi">
-            <a href="contact.html" target="_blank">
+            <a href="contact.html">
             <button>CONTACT US</button>
         </div>
     </div>
@@ -258,16 +258,16 @@
             <div class="social-section">
                 <h4>Connect</h4>
                 <div class="social-container">
-                    <a href="https://www.facebook.com/" target="_blank">
+                    <a href="https://www.facebook.com/">
                         <img src="https://cdn-icons-png.flaticon.com/512/124/124010.png" alt="Facebook">
                     </a>
-                    <a href="https://www.linkedin.com/" target="_blank">
+                    <a href="https://www.linkedin.com/">
                         <img src="https://cdn-icons-png.flaticon.com/512/124/124011.png" alt="LinkedIn">
                     </a>
-                    <a href="https://www.instagram.com/" target="_blank">
+                    <a href="https://www.instagram.com/">
                         <img src="https://cdn-icons-png.flaticon.com/512/124/124021.png" alt="Instagram">
                     </a>
-                    <a href="https://github.com/" target="_blank">
+                    <a href="https://github.com/">
                         <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="Github">
                     </a>
                 </div>
@@ -283,7 +283,6 @@
     </section>
 
     <script>
-        // Slideshow functionality
         let slideIndex = 0;
         showSlides();
 
@@ -335,8 +334,7 @@
                 dots[slideIndex - 1].classList.add("active");
             }
         }
-        
-        // Mobile navigation menu toggle
+
         document.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.getElementById('menu-toggle');
             const mobileNav = document.getElementById('mobile-nav');
@@ -346,8 +344,6 @@
                     mobileNav.classList.toggle('active');
                     menuToggle.classList.toggle('active');
                 });
-                
-                // Close menu when clicking on a link
                 const navLinks = mobileNav.querySelectorAll('a');
                 navLinks.forEach(link => {
                     link.addEventListener('click', function() {
