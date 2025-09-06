@@ -7,6 +7,9 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background-color: #f5f5f5;
 }
 
 .nav-bar {
@@ -59,6 +62,12 @@ body {
   margin: 0 auto;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
   border-radius: 0 0 10px 10px;
+  animation: slideIn 1s ease-out forwards;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .mySlides {
@@ -184,7 +193,8 @@ body {
 .first-box {
   background: linear-gradient(135deg, rgba(127, 162, 190, 0.9) 0%, rgba(91, 130, 160, 0.9) 100%);
   min-height: 246px;
-  margin-top: 20px;
+  margin: 20px auto;
+  max-width: 1200px;
   padding: 3rem 2rem;
   border-radius: 15px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2), inset 0 2px 10px rgba(255, 255, 255, 0.1);
@@ -192,11 +202,14 @@ body {
   overflow: hidden;
   transform: translateZ(0);
   transition: all 0.4s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .first-box:hover {
   transform: translateY(-5px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25), inset 0 2px 10px rgba(255, 255, 255, 0.15);
+  background: linear-gradient(135deg, rgba(91, 130, 160, 0.9) 0%, rgba(127, 162, 190, 0.9) 100%);
 }
 
 .first-box::before {
@@ -225,9 +238,19 @@ body {
 }
 
 .all h3 {
-  font-size: 3.5rem;
-  font-family: Arial, Helvetica, sans-serif;
-  margin-bottom: 0rem;
+  font-size: 4rem;
+  font-family: 'Arial', sans-serif;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #fff;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  animation: pulseText 2s infinite alternate;
+}
+
+@keyframes pulseText {
+  from { text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); }
+  to { text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 255, 255, 0.3); }
 }
 
 .details {
@@ -241,45 +264,73 @@ body {
 
 .old-price, .new-price {
   display: inline-block;
-  margin: 0 0rem;
-  
+  margin: 0 1rem;
+  position: relative;
 }
 
 .old-price {
-  
   text-decoration: line-through;
-  color: #4d4e88;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.5rem;
+  transform: translateY(-5px);
+}
+
+.old-price::after {
+  content: '';
+  position: absolute;
+  width: 110%;
+  height: 3px;
+  background-color: rgba(255, 0, 0, 0.6);
+  top: 50%;
+  left: -5%;
+  transform: rotate(-12deg);
 }
 
 .new-price {
   font-weight: bold;
   color: #fff;
+  font-size: 2.2rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  animation: pulsate 1.5s infinite alternate;
+}
+
+@keyframes pulsate {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.05); }
 }
 
 .contact {
   display: flex;
   gap: 2rem;
   justify-content: center;
-  margin-top: 0rem;
+  margin-top: 1.5rem;
   flex-wrap: wrap;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .enqi button,
 .whats button {
-  width: 8rem;
-  height: 3rem;
+  width: 11rem;
+  height: 3.5rem;
   border: none;
   border-radius: 2rem;
   background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
   color: white;
   font-weight: 600;
+  font-size: 1.1rem;
   letter-spacing: 0.5px;
-  box-shadow: 0 4px 15px rgba(106, 17, 203, 0.4);
+  box-shadow: 0 8px 20px rgba(106, 17, 203, 0.4);
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   overflow: hidden;
   z-index: 1;
+  text-transform: uppercase;
 }
 
 .enqi button::before,
@@ -297,9 +348,10 @@ body {
 
 .enqi button:hover,
 .whats button:hover {
-  transform: translateY(-5px) scale(1.03);
-  box-shadow: 0 8px 25px rgba(106, 17, 203, 0.6);
-  letter-spacing: 1px;
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 12px 30px rgba(106, 17, 203, 0.7);
+  letter-spacing: 1.5px;
+  background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%);
 }
 
 .enqi button:hover::before,
@@ -334,13 +386,24 @@ body {
 
 .jump {
   display: inline-block;
-  font-size: 2.8rem;
+  font-size: 3.2rem;
   font-weight: bold;
   margin: 1.5rem 0;
   --base: #ff3a3a;   
   --peak: #ffd700;   
-  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   position: relative;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #ff3a3a, #ffd700, #ff3a3a);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 5s linear infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
 }
 
 .jump::after {
@@ -374,12 +437,11 @@ body {
 @keyframes jump {
   0%, 100% {
     transform: translateY(0);
-    color: var(--base);
     filter: none;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   }
   40% {
-    transform: translateY(-0.55em);
+    transform: translateY(-0.65em);
     text-shadow: 0 15px 10px rgba(0, 0, 0, 0.1);
   }
   50% {
